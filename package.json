@@ -1,0 +1,13 @@
+{
+  "name": "droit-suretes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plateforme personnelle de révision du droit des sûretés",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "npx --yes serve dist -l 8080",
+    "test": "python3 scripts/test_e2e.py"
+  },
+  "devDependencies": { "esbuild": "^0.24.0" }
+}
