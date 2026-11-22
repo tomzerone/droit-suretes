@@ -4,6 +4,8 @@ Plateforme personnelle de préparation à l'examen de droit des sûretés (cauti
 
 ## Accès
 
+- **Site public pour partager (GitHub Pages)** : https://tomzerone.github.io/droit-suretes/ — une fois GitHub Pages activé (dépôt public, Settings → Pages → Deploy from a branch → `main` / `/docs`). Aucun compte nécessaire ; la progression de chacun est gardée dans son propre navigateur ; la correction par Claude est remplacée par l'auto-évaluation guidée.
+
 - **En ligne (recommandé)** : https://claude.ai/artifact/Ffj3HiqKsNDfvnqUsTb7De — page privée hébergée sur claude.ai. Connecté à ton compte Claude, ta progression est synchronisée entre ordinateur et téléphone, et la correction des cas pratiques par Claude est disponible.
 - **Hors ligne** : ouvre `dist/plateforme-suretes.html` dans un navigateur (un seul fichier, tout inclus). La progression est alors gardée dans ce navigateur, et la correction par Claude est remplacée par l'auto-évaluation guidée.
 - **Serveur local** : `npm install && npm run build && npm run serve`, puis http://localhost:8080.

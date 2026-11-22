@@ -14,4 +14,8 @@ const html = readFileSync('src/index.html', 'utf8')
   .replace('<link rel="stylesheet" href="styles.css">', `<style>${readFileSync('dist/styles.css', 'utf8')}</style>`)
   .replace('<script src="app.js"></script>', () => `<script>${readFileSync('dist/app.js', 'utf8').replace(/<\/script/gi, '<\\/script')}</script>`);
 writeFileSync('dist/plateforme-suretes.html', html);
+// Copie pour GitHub Pages (Settings → Pages → branche main, dossier /docs)
+mkdirSync('docs', { recursive: true });
+for (const f of ['index.html', 'app.js', 'styles.css']) copyFileSync('dist/' + f, 'docs/' + f);
+writeFileSync('docs/.nojekyll', '');
 console.log('Build OK');

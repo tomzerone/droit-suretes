@@ -32,7 +32,7 @@ with sync_playwright() as p:
         pg.on('pageerror', lambda e: errors.append(str(e)))
         pg.on('console', lambda m: errors.append(m.text) if m.type == 'error' and 'fonts' not in m.text and 'ERR_FAILED' not in m.text else None)
         pg.goto(URL); pg.wait_for_selector('h1')
-        check('Tom' in pg.inner_text('h1'), f'[{vp_name}] accueil : titre')
+        check(pg.inner_text('h1').startswith(('Bonjour','Bonsoir','Bonne')), f'[{vp_name}] accueil : titre')
         pg.screenshot(path=f'{SHOTS}/{vp_name}-accueil.png', full_page=True)
 
         # Toutes les routes s'affichent

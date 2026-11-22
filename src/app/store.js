@@ -15,6 +15,7 @@ export function defaultState() {
     examDrafts: {},      // ex1: { answers, startedAt }
     sessions: [],        // { at, kind, label }
     last: null,          // { route, label, at }
+    name: '',            // prénom affiché sur le tableau de bord
   };
 }
 

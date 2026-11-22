@@ -48,7 +48,7 @@ export function render() {
   const html = `
   <header class="home-h">
     <div>
-      <h1>${greet()} Tom</h1>
+      <h1>${greet()}${state.name ? ' ' + esc(state.name) : ''}</h1>
       <p class="lead">Droit des sûretés : cautionnement, gage, nantissement, hypothèque. ${g.progress ? `Tu as parcouru <strong>${g.progress} %</strong> de ton programme.` : 'Ton programme t\'attend : dix chapitres, tous tirés de tes quatre cours.'}</p>
     </div>
     ${resume}

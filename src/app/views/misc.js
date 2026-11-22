@@ -1,4 +1,4 @@
-import { state, sync, logSession, resetAll, exportJSON, importJSON } from '../store.js';
+import { state, save, sync, logSession, resetAll, exportJSON, importJSON } from '../store.js';
 import { PROBABLES, SIGNAUX, CAS, CH, weakChapters, chLabel, chapterStats, FLASHCARDS } from '../data.js';
 import { esc, icon, $, toast, confirmDialog, plural } from '../ui.js';
 import { startSession } from './flashcards.js';
@@ -65,12 +65,14 @@ const reglages = {
       <div class="row-btns"><button class="btn ghost" id="export">Copier ma sauvegarde</button><button class="btn ghost" id="import">Importer une sauvegarde</button></div>
       <div id="imp" hidden><label for="imp-t">Colle ici le texte de ta sauvegarde :</label><textarea id="imp-t" rows="4"></textarea><button class="btn primary" id="imp-go">Importer</button></div>
     </section>
+    <section class="panel"><h2>Ton prénom</h2><form id="nameform" class="row-btns" style="margin:0"><label class="sr" for="nm">Prénom</label><input id="nm" class="txt" value="${esc(state.name || '')}" placeholder="Ex. : Tom" maxlength="30"><button class="btn primary">Enregistrer</button></form></section>
     <section class="panel"><h2>Affichage</h2><div class="seg" role="group" aria-label="Thème">${[['auto', 'Automatique'], ['light', 'Clair'], ['dark', 'Sombre']].map(([v, l]) => `<button data-theme="${v}" class="${theme === v ? 'on' : ''}" aria-pressed="${theme === v}">${l}</button>`).join('')}</div></section>
     <section class="panel"><h2>Repartir de zéro</h2><p class="muted">Efface chapitres étudiés, flashcards, QCM, cas pratiques et examens.</p><button class="btn danger" id="reset">Effacer toute ma progression</button></section>
     <section class="panel"><h2>À propos du contenu</h2><p class="muted">Tout le contenu juridique provient exclusivement de tes quatre cours (reconstitués à partir des enregistrements de ta professeure). Les ajouts de la plateforme (méthode, conseils, questions probables, points à vérifier) sont signalés comme tels.</p></section>`;
     return { html, title: 'Réglages' };
   },
   mount(root) {
+    $('#nameform', root).onsubmit = (e) => { e.preventDefault(); state.name = $('#nm', root).value.trim(); save(); toast('Prénom enregistré'); };
     $('#export', root).onclick = async () => {
       try { await navigator.clipboard.writeText(exportJSON()); toast('Sauvegarde copiée dans le presse-papiers'); }
       catch { $('#imp', root).hidden = false; $('#imp-t', root).value = exportJSON(); $('#imp-t', root).select(); toast('Copie impossible : sélectionne le texte et copie-le'); }

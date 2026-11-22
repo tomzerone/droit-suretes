@@ -577,3 +577,5 @@ td + td, th + td, td + th { border-left: 1px solid var(--line); }
   main { margin: 0; padding: 0; }
   .box { break-inside: avoid; }
 }
+
+.txt { font: inherit; padding: 9px 12px; border: 1px solid var(--line-2); border-radius: var(--r-m); background: var(--surface); color: var(--ink); min-width: 0; flex: 1 1 200px; max-width: 320px; }
