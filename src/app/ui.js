@@ -41,6 +41,7 @@ const P = {
   moon: '<path d="M16 12.5A6.5 6.5 0 0 1 7.5 4a6.5 6.5 0 1 0 8.5 8.5z"/>',
   more: '<circle cx="5" cy="10" r=".8"/><circle cx="10" cy="10" r=".8"/><circle cx="15" cy="10" r=".8"/>',
   cloud: '<path d="M6 15.5h8.5a3.5 3.5 0 0 0 .3-7A5 5 0 0 0 5 9.5a3 3 0 0 0 1 6z"/>',
+  headphones: '<path d="M3.5 14v-3a6.5 6.5 0 0 1 13 0v3"/><rect x="3" y="12.5" width="3.5" height="5" rx="1"/><rect x="13.5" y="12.5" width="3.5" height="5" rx="1"/>',
   device: '<rect x="5" y="2.5" width="10" height="15" rx="2"/><path d="M9 15h2"/>',
 };
 export function icon(name, cls = '') {

@@ -8,12 +8,14 @@ import * as Cas from './views/cas.js';
 import * as Qcm from './views/qcm.js';
 import * as Exams from './views/examens.js';
 import * as Misc from './views/misc.js';
+import * as Podcast from './views/podcast.js';
 
 export const NAV = [
   { id: 'accueil', label: 'Tableau de bord', short: 'Accueil', icon: 'home' },
   { id: 'cours', label: 'Cours', icon: 'book' },
   { id: 'fiches', label: 'Fiches', icon: 'sheet' },
   { id: 'flashcards', label: 'Flashcards', icon: 'cards' },
+  { id: 'podcast', label: 'Podcast', icon: 'headphones' },
   { id: 'methode', label: 'Méthode du cas pratique', short: 'Méthode', icon: 'scale' },
   { id: 'cas', label: 'Cas pratiques', short: 'Cas', icon: 'pen' },
   { id: 'qcm', label: 'QCM', icon: 'check' },
@@ -26,7 +28,7 @@ const TABS = ['accueil', 'cours', 'flashcards', 'cas'];
 // Routes : #nom ou #nom-param (lettres, chiffres, tirets uniquement)
 const ROUTES = {
   accueil: [Home], cours: [Cours], fiches: [Fiches], flashcards: [Cards], methode: [Cas, 'methode'], cas: [Cas],
-  qcm: [Qcm], probables: [Misc, 'probables'], examens: [Exams], examen: [Exams, 'run'], revision: [Misc, 'revision'],
+  qcm: [Qcm], podcast: [Podcast], probables: [Misc, 'probables'], examens: [Exams], examen: [Exams, 'run'], revision: [Misc, 'revision'],
   verifier: [Cours, 'verifier'], recherche: [Cours, 'recherche'], reglages: [Misc, 'reglages'],
 };
 

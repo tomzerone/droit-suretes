@@ -37,7 +37,7 @@ with sync_playwright() as p:
 
         # Toutes les routes s'affichent
         routes = ['cours', 'cours-c0', 'cours-c3', 'cours-c9', 'fiches', 'fiches-c4', 'flashcards', 'methode', 'cas', 'cas-cp7',
-                  'qcm', 'probables', 'examens', 'examen-ex1', 'examen-eq1', 'revision', 'verifier', 'recherche', 'reglages']
+                  'qcm', 'podcast', 'podcast-ep3', 'probables', 'examens', 'examen-ex1', 'examen-eq1', 'revision', 'verifier', 'recherche', 'reglages']
         for r in routes:
             pg.goto(URL + '#' + r); pg.wait_for_timeout(120)
             h = pg.query_selector('main h1')
